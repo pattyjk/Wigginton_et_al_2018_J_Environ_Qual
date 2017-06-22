@@ -1,6 +1,6 @@
 # N-Cycling_Wastewater_Wigginton
 
-##Moving things around
+## Moving things around
 All the work flow of this project is done on a Linux-based machine using QIIME 1.9.1 (thus far). 
 
 First, need to move all the files into the same folder so we can join the paired end reads. We'll use the find command paired with the copy command. The basic structure of this command is:
@@ -46,7 +46,7 @@ Hop back a level in our file structure.
 ```
 cd ..
 ```
-##Joining Paired Ends and Demultiplexing
+## Joining Paired Ends and Demultiplexing
 
 Now that our files are moved we can join our paired ends with 'multiple_join_paired_ends.py' in QIIME. We'll run 2 commands to accomlpish this where '-i' is our folder with our reads in it and '-o' is a output directory for our joined reads. 
 
