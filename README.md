@@ -1,4 +1,4 @@
-# N-Cycling_Wastewater_Wigginton
+#N-Cycling_Wastewater_Wigginton
 
 ## Moving things around
 All the work flow of this project is done on a Linux-based machine using QIIME 1.9.1 (thus far). 
@@ -13,7 +13,6 @@ The '*' is a wildcard in Linux so basically anything with a *.gz extension are f
 mkdir SK97
 
 mkdir SKW1
-
 ```
 Next we'll change into the directory where the files are and then copy them to our created folders.
 
@@ -21,7 +20,6 @@ Next we'll change into the directory where the files are and then copy them to o
 cd SKW1-96-36782746-003
 
 find -type f -name "*.gz" -exec cp {} /Desktop/N-Cycling_wastewater_wigginton/SKW1\;
-
 ```
 Hop back a level in our file structure.
 
@@ -65,9 +63,9 @@ find SK97_joined -type f -name 'fastqjoin.un1.fastq' -delete
 With our reads joined and unjoined reads purged we want to demultiplex the files which trims and quality filters our sequuences leaving us with a fasta file for each gene. We'll use "multiple_split_libraries_fastq.py". 
 
 ```
-multiple_split_libraries_fastq.py -i SKW1_joined -o SKW1_split -m sampleid_by_file --include_input_dir_path -p demult_param
+multiple_split_libraries_fastq.py -i SKW1_joined -o SKW1_split -m sampleid_by_file --include_input_dir_path -p demult_param.txt
 
-multiple_split_libraries_fastq.py -i SK97_joined -o SK97_split -m sampleid_by_file --include_input_dir_path -p demult_param
+multiple_split_libraries_fastq.py -i SK97_joined -o SK97_split -m sampleid_by_file --include_input_dir_path -p demult_param.txt
 ```
 
 Where '-i' is our directory with the reads in it, '-o' is a output directory, '-m' is telling QIIME to use the sampleid (in lieu of a barcode) to figure out sample names, '-p' is a parameter file that tells QIIME to use a quality score threshold of 30 (1 in 1000 chance the base isn't the correct base), and '--include_input_dir_path' which uses the directory name for the sample name.
