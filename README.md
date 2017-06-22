@@ -1,6 +1,7 @@
+
 # N-Cycling_Wastewater_Wigginton
 
-All the work flow of this project is done on a Linux-based machine using QIIME 1.9.1l and BLAST+.
+All the work flow of this project is done on a Linux-based machine using QIIME 1.9.1 (thus far). 
 
 First, need to move all the files into the same folder so we can join the paired end reads. We'll use the find command paired with the copy command. The basic structure of this command is:
 
@@ -8,24 +9,35 @@ find -type f -name "*.gz" -exec cp {} /directory_where_files_are_going\;
 
 So we'll navigate to the directory (folder) where the files are located and execute 4 commands. First, we'll create a directory for each set of sequences with 'mkdir'.  
 
+```
 mkdir SK97
 
 mkdir SKW1
+```
 
 Next we'll change into the directory where the files are and then copy them to our created folders.
 
-cd SKW1-96-36782746-003
+```cd SKW1-96-36782746-003
 
 find -type f -name "*.gz" -exec cp {} /Desktop/N-Cycling_wastewater_wigginton/SKW1\;
 
+```
+
 Hop back a level in our file structure.
 
+```
 cd ..
+```
+And change into one of our folders with the reads in it.
 
+```
 cd SK97-186-37112077
+```
+Find and copy te files of interest. 
 
+```
 find -type f -name "*.gz" -exec cp {} /Desktop/N-Cycling_wastewater_wigginton/SK97\;
-
+```
 Hop back a level in our file structure.
 
 cd ..
