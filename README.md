@@ -18,7 +18,8 @@ mkdir SKW1
 
 Next we'll change into the directory where the files are and then copy them to our created folders.
 
-```cd SKW1-96-36782746-003
+```
+cd SKW1-96-36782746-003
 
 find -type f -name "*.gz" -exec cp {} /Desktop/N-Cycling_wastewater_wigginton/SKW1\;
 
