@@ -21,7 +21,7 @@ cd SKW1-96-36782746-003
 
 find -type f -name "*.gz" -exec cp {} /Desktop/N-Cycling_wastewater_wigginton/SKW1\;
 ```
-Hop back a level in our file structure.
+`Hop back a level in our file structure.
 
 ```
 cd ..
@@ -63,11 +63,77 @@ find SK97_joined -type f -name 'fastqjoin.un1.fastq' -delete
 With our reads joined and unjoined reads purged we want to demultiplex the files which trims and quality filters our sequuences leaving us with a fasta file for each gene. We'll use "multiple_split_libraries_fastq.py". 
 
 ```
-multiple_split_libraries_fastq.py -i SKW1_joined -o SKW1_split -m sampleid_by_file --include_input_dir_path -p demult_param.txt
+multiple_split_libraries_fastq.py -i SKW1_joined -o SKW1_split_nos -m sampleid_by_file --include_input_dir_path -p demult_param.txt
 
-multiple_split_libraries_fastq.py -i SK97_joined -o SK97_split -m sampleid_by_file --include_input_dir_path -p demult_param.txt
+multiple_split_libraries_fastq.py -i SK97_joined -o SK97_split_amo -m sampleid_by_file --include_input_dir_path -p demult_param.txt
 ```
 
 Where '-i' is our directory with the reads in it, '-o' is a output directory, '-m' is telling QIIME to use the sampleid (in lieu of a barcode) to figure out sample names, '-p' is a parameter file that tells QIIME to use a quality score threshold of 30 (1 in 1000 chance the base isn't the correct base), and '--include_input_dir_path' which uses the directory name for the sample name.
 
 Now that our samples are demultiplexed we can proceed with downstream analyses. 
+
+## Chimera detection
+
+As with any amplicon-based sequencing project we need to check our sequences for chimeric sequences that derive from PCR errors. We're going to be using USEARCH in de novo mode to identify chimeric sequences and then discard them. De novo mode uses ab abundance-based approach to ID chimeras and is particularly suited for functional genes that typicall have meh databases (in relation to environmental sequences). 
+
+```
+cd SKW1_split_nos
+identify_chimeric_seqs.py -m usearch61 --suppress_usearch61_ref -i seqs.fna -o chimeric
+
+#we can see how many chimeras we have by using the shell command 'grep'
+grep -c "SKW" chimeric/chimeras.txt
+
+#we'll take the output and filter out chimeric sequences. 
+filter_fasta.py -n -o chimera_free_split.fna -f seqs.fna -s chimeric/chimeras.txt
+
+
+cd ..
+
+cd SK97_split_amo
+identify_chimeric_seqs.py -m usearch61 --suppress_usearch61_ref -i skw.txt -o chimeric
+grep -c "SKW" chimeric/chimeras.txt
+
+filter_fasta.py -n -o chimera_free_split.fna -f seqs.fna -s chimeric/chimeras.txt
+
+cd ..
+
+```
+This can be sped up (parallelized) by developing a refernce database from NCBI or FunGene.
+
+## Picking operational taxonomic units (OTUs), picking a rep set, & making an OTU table
+
+To collapse our amplicons to species level units we'll cluster the reads into OTUs. We will use 85% sequence identity for amoA (Pester et al. 2011, Envrion. Microbiol.) and 90% identity for nosZ (Bowen et al. 2013, Front. Micro.; this reference is for nirS but sample principal applies).
+
+To pick OTUs we'll use the 'pick_otus.py' command paired with the OTU picking method swarm (Mahe et al. 2013, PeerJ). This is the most robust and accurate de novo OTU picking method.
+
+```
+cd SK97_split_amo
+pick_otus.py -m swarm -i chimera_free_split.fna -o swarm_otus -s 0.85 
+cd ..
+
+cd SKW1_split_nos
+pick_otus.py -m swarm -i chimera_free_split.fna -o swarm_otus -s 0.90
+cd ..
+```
+Now that we have our OTUs we want to create a OTU table (species by sample matrix) with the command 'make_otu_table.py' and pick a set of representative sequences with 'pick_rep_set.py'. 
+
+```
+cd SK97_split_amo
+
+pick_rep_set.py -f chimera_free_split.fna -o amo_rep_set.fna -i swarm_otus/
+make_otu_table.py -o amo_otu_table.biom -i swarm_otus/
+
+#you can convert this table to a .txt file with 'biom convert' command, the nuts and bolts of this command varies depending on your version of the biom package (mine is older)
+
+biom convert -i amo_otu_table.biom -o amo_otu_table.txt -b --table-type="OTU table"
+
+cd ..
+
+cd SKW1_split_nos
+
+pick_rep_set.py -f chimera_free_split.fna -o nos_rep_set.fna -i swarm_otus/
+make_otu_table.py -o nos_otu_table.biom -i swarm_otus/
+biom convert -i nos_otu_table.biom -o nos_otu_table.txt -b --table-type="OTU table"
+```
+With out rep set and OTU table we can perform downstream analyses (beta and alpha diversity and assigning taxonomy).
+
