@@ -1,4 +1,4 @@
-#N-Cycling_Wastewater_Wigginton
+# N-Cycling_Wastewater_Wigginton
 
 ## Moving things around
 All the work flow of this project is done on a Linux-based machine using QIIME 1.9.1 (thus far). 
