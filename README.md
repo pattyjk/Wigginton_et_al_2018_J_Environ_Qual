@@ -66,7 +66,7 @@ With our reads joined and unjoined reads purged we want to demultiplex the files
 multiple_split_libraries_fastq.py -i SKW1_joined -o SKW1_split_nos -m sampleid_by_file --include_input_dir_path -p demult_param.txt
 
 multiple_split_libraries_fastq.py -i SK97_joined -o SK97_split_amo -m sampleid_by_file --include_input_dir_path -p demult_param.txt
-i```
+```
 
 Where '-i' is our directory with the reads in it, '-o' is a output directory, '-m' is telling QIIME to use the sampleid (in lieu of a barcode) to figure out sample names, '-p' is a parameter file that tells QIIME to use a quality score threshold of 30 (1 in 1000 chance the base isn't the correct base), and '--include_input_dir_path' which uses the directory name for the sample name.
 
@@ -76,7 +76,7 @@ Now that our samples are demultiplexed we can proceed with downstream analyses.
 
 As with any amplicon-based sequencing project we need to check our sequences for chimeric sequences that derive from PCR errors. We're going to be using USEARCH in de novo mode to identify chimeric sequences and then discard them. De novo mode uses ab abundance-based approach to ID chimeras and is particularly suited for functional genes that typicall have meh databases (in relation to environmental sequences). 
 
-b```
+```
 cd SKW1_split_nos
 identify_chimeric_seqs.py -m usearch61 --suppress_usearch61_ref -i seqs.fna -o chimeric
 
@@ -85,8 +85,6 @@ grep -c "SKW" chimeric/chimeras.txt
 
 #we'll take the output and filter out chimeric sequences. 
 filter_fasta.py -n -o chimera_free_split.fna -f seqs.fna -s chimeric/chimeras.txt
-
-
 
 cd ..
 
@@ -97,8 +95,9 @@ grep -c "SKW" chimeric/chimeras.txt
 filter_fasta.py -n -o chimera_free_split.fna -f seqs.fna -s chimeric/chimeras.txt
 
 cd ..
+```
 
-```This can be sped up (parallelized) by developing a refernce database from NCBI or FunGene.
+This can be sped up (parallelized) by developing a refernce database from NCBI or FunGene.
 
 ## Picking operational taxonomic units (OTUs), picking a rep set, & making an OTU table
 
