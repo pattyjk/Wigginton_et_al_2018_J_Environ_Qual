@@ -98,8 +98,7 @@ filter_fasta.py -n -o chimera_free_split.fna -f seqs.fna -s chimeric/chimeras.tx
 
 cd ..
 
-```
-This can be sped up (parallelized) by developing a refernce database from NCBI or FunGene.
+```This can be sped up (parallelized) by developing a refernce database from NCBI or FunGene.
 
 ## Picking operational taxonomic units (OTUs), picking a rep set, & making an OTU table
 
@@ -142,7 +141,43 @@ biom convert -i nos_otu_table.biom -o nos_otu_table.txt -b --table-type="OTU tab
 biom summarize-table -i nos_otu_table.biom -o nos_sum.txt
 
 less nos_sum.txt
+
+#go back home
+cd ..
 ```
 
-With out rep set and OTU table we can perform downstream analyses (beta and alpha diversity and assigning taxonomy).
+With our rep set and OTU table we can perform downstream analyses (beta and alpha diversity and assigning taxonomy).
+
+## Diversity
+
+This can be done in any statistical package but we'll calculate alpha and beta diversity in QIIME because it is easy. 
+
+```
+cd SKW1_split_nos
+
+single_rarefaction.py -i nos_otu_table.biom -o nos_rare.biom -d
+#normalizing the OTU table to teh lowest sequencing depth
+#-d should be the lowest sequencing depth from the 'biom summarize-table command'.
+
+beta_diversity.py -m bray_curtis -i nos_rare.biom -o nos_beta
+#calculate pairwise dissimilarity with bray curtis. To see all options run 'beta_diversity.py -s'.
+
+principal_coordinates.py -i nos_beta -o nos_beta/coords.txt
+#creates 2D coordinates for a principal coordinates analysis (PCoA).
+
+cd ..
+
+cd SK97_split_amo
+
+single_rarefaction.py -i amo_otu_table.biom -o amo_rare.biom -d
+#-d should be the lowest sequencing depth from the 'biom summarize-table command'.
+
+beta_diversity.py -m bray_curtis -i amo_rare.biom -o amo_beta
+#calculate pairwise dissimilarity with bray curtis. To see all options run 'beta_diversity.py -s'.
+
+principal_coordinates.py -i amo_beta -o amo_beta/coords.txt
+#creates 2D coordinates for a principal coordinates analysis (PCoA).
+
+cd ..
+``` 
 
