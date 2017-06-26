@@ -202,7 +202,7 @@ tar -xf *.gz
 
 We also need to get a list of NCBI identifiers to ignore as, for this round, we only want known cultured denitrifiers. We can use this link:
 
-https://www.ncbi.nlm.nih.gov/nuccore/?term=%22environmental%20samples%22%5Borganism%5D%20OR%20metagenomes%5Borgn%5D
+https://www.ncbi.nlm.nih.gov/nuccore/?term=%22environmental+samples%22%5Borganism%5D+OR+metagenomes%5Borgn%5D+OR+%22Unidentified%22+OR+%22clone%22
 
 Then: Send to > File > Format > GI list
 
