@@ -114,7 +114,7 @@ cd SKW1_split_nos
 pick_otus.py -m swarm -i chimera_free_split.fna -o swarm_otus -s 0.90
 cd ..
 ```
-Now that we have our OTUs we want to create a OTU table (species by sample matrix) with the command 'make_otu_table.py' and pick a set of representative sequences with 'pick_rep_set.py'. 
+#Now that we have our OTUs we want to create a OTU table (species by sample matrix) with the command 'make_otu_table.py' and pick a set of representative sequences with 'pick_rep_set.py'. 
 
 ```
 cd SK97_split_amo
@@ -124,7 +124,7 @@ make_otu_table.py -o amo_otu_table.biom -i swarm_otus/
 
 #you can convert this table to a .txt file with 'biom convert' command, the nuts and bolts of this command varies depending on your version of the biom package (mine is older). This OTU table can be used in any statistical package (i.e. R). 
 
-biom convert -i amo_otu_table.biom -o amo_otu_table.txt -b --table-type="OTU table"
+#biom convert -i amo_otu_table.biom -o amo_otu_table.txt -b --table-type="OTU table"
 biom summarize-table -i amo_otu_table.biom -o amo_sum.txt 
 
 #see our sequencing depth
@@ -180,3 +180,38 @@ principal_coordinates.py -i amo_beta -o amo_beta/coords.txt
 cd ..
 ``` 
 
+## BLASTn
+
+To get identify our rep set and make sure we have all amoA and nosZ sequneces we'll use BLAST+. You have to downlaod and install the software from NCBI. The first thing you have to do is get the nt database. We can do that with a simple script.
+
+```
+#ignore these, these are MSU HPCC specific. 
+#ssh dev-intel14
+#module load RMBlast/2.2.28
+
+mkdir nt
+cd nt
+
+update_blastdb.pl nt
+#downloads a 48 file database.
+
+tar -xf *.gz
+#extracts all the files to the current directory (nt)
+
+```
+
+We also need to get a list of NCBI identifiers to ignore as, for this round, we only want known cultured denitrifiers. We can use this link:
+
+https://www.ncbi.nlm.nih.gov/nuccore/?term=%22environmental%20samples%22%5Borganism%5D%20OR%20metagenomes%5Borgn%5D
+
+Then: Send to > File > Format > GI list
+
+Now we can BLAST our rep set.
+
+```
+blastn -query nos_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out nos_results_out -negative_gilist sequence.gi -db nt
+
+blastn -query amo_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out -negative_gilist sequence.gi -db nt
+```
+
+This gives us back a single BLAST hit for each OTU and the percent identity for that it. 
