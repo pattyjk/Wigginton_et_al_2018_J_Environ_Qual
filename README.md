@@ -147,15 +147,33 @@ cd ..
 
 With our rep set and OTU table we can perform downstream analyses (beta and alpha diversity and assigning taxonomy).
 
+## Mapping file
+For our diversity to meaningful we need to put together a mapping file for each gene that has all the information (metadata) for each sample. QIIME requires a pretty specific format for their mapping files: http://qiime.org/documentation/file_formats.html#mapping-file-overview
+
+We need the header to look like this in tab delimited format (CSV or any other kind won't work):
+
+#SampleID BarcodeSequence LinkerPrimerSequence Description
+
+All other information has to be squeezed as columns in between "LinkerPrimerSequence" and "Description". Additionall "BarcodeSequence" and "LinkerPrimerSequence" can be left blank for use because of the way we demultiplexed our samples (via the MiSeq versus by barcode in QIIME). Additionally, description can be anything you want (such as a sentence describing the sample or study).
+
+Both the mapping files I have look like this:
+
+```
+head -2 amo_map.txt
+#SampleID       BarcodeSequence LinkerPrimerSequence    Gene    Fragment_length _bp     Field_ID        Type_of _Wastewater Month_Collected  Sampling_Location       Description
+SKW97                   amoA    349     JA06F   OWTS    June    SP1     SKW97
+```
+
 ## Diversity
 
-This can be done in any statistical package but we'll calculate alpha and beta diversity in QIIME because it is easy. 
+This can be done in any statistical package but we'll calculate alpha and beta diversity in QIIME because it's easy. 
 
 ```
 cd SKW1_split_nos
+#change to our nosZ folder
 
-single_rarefaction.py -i nos_otu_table.biom -o nos_rare.biom -d
-#normalizing the OTU table to teh lowest sequencing depth
+single_rarefaction.py -i nos_otu_table.biom -o nos_rare.biom -d 2028
+#normalizing the OTU table to the lowest sequencing depth, I chose 2028 (the second most shallow sample to maximize diversity, lowest was <50l0)
 #-d should be the lowest sequencing depth from the 'biom summarize-table command'.
 
 beta_diversity.py -m bray_curtis -i nos_rare.biom -o nos_beta
@@ -164,12 +182,17 @@ beta_diversity.py -m bray_curtis -i nos_rare.biom -o nos_beta
 principal_coordinates.py -i nos_beta -o nos_beta/coords.txt
 #creates 2D coordinates for a principal coordinates analysis (PCoA).
 
+make_2d_plots.py -m nos_map.txt -i nos_beta/coords.txt -o nos_beta/2D_plot
+#makes a 2D PCoA plot. There's options for a 3D plot using emperor if you so desired. 
+
 cd ..
+#jump back a level.
 
 cd SK97_split_amo
+#change into our amoA directory.
 
-single_rarefaction.py -i amo_otu_table.biom -o amo_rare.biom -d
-#-d should be the lowest sequencing depth from the 'biom summarize-table command'.
+single_rarefaction.py -i amo_otu_table.biom -o amo_rare.biom -d 7627
+#-d should be the lowest sequencing depth from the 'biom summarize-table command'. I threw out the poorly sequenced sample here (depth=200) as its not sufficient for describing diversity here. 
 
 beta_diversity.py -m bray_curtis -i amo_rare.biom -o amo_beta
 #calculate pairwise dissimilarity with bray curtis. To see all options run 'beta_diversity.py -s'.
@@ -177,12 +200,43 @@ beta_diversity.py -m bray_curtis -i amo_rare.biom -o amo_beta
 principal_coordinates.py -i amo_beta -o amo_beta/coords.txt
 #creates 2D coordinates for a principal coordinates analysis (PCoA).
 
+make_2d_plots.py -m amo_map.txt -o amo_beta/2d_plot -i amo_beta/coords.txt
+#makes a 2D PCoA plot. There's options for a 3D plot using emperor if you so desired. 
+
 cd ..
 ``` 
+We have our first appreciable piece of data! We ca open the folder 2D_plot and click the HTML file so see the ordination of our Bray-Curtis similairty values. We have a few overarching patterns here that we can come back to in a bit.
+
+Next we want to calculate our alpha diversity. We first need to re-rarefy our data (thousands of times, instead of just a single type) becasue alpha diversity is more sensitive to errors associated with rarefaction. So by doing it a bunch of times we can reduce that error. 
+
+I am going to paralleize this script to take advantage of the HPCC at MSU but the guts of the scripts will be the same. The only funky thing here is the '-m' option which is the start point of rarefaction (I always set it to 10). Also, "-O 16" calls 16 cores. 
+
+```
+parallel_multiple_rarefactions.py -i nos_otu_table.biom -o nos_mult_rare -m 10 -x 2028 -s 100 -n 10000 -O 16
+
+parallel_multiple_rarefactions.py -i amo_otu_table.biom -o amo_mult_rare -m 10 -x 7627 -s 100 -n 10000 -O 16
+```
+
+This produces a folder for each gene with lots of OTU tables for each iteration of the rarefaction. I did 10k iterations with ~200-700 steps, which might be overkill (both computationally and diversity estimate wise) but I'd rather be sure I've converged on the true mean. However, if you have enough replication you can drop the number of iterations. 
+
+Next, we want to calculate the alhpa diversity. Again, I'm going to parallize this but the guts are exactly the same as the resular script (alpha_diversity.py).
+
+```
+parallel_alpha_diversity.py -i nos_mult_rare/ -o nos_alpha -m observed_otus,shannon,singles,goods_coverage,pielou_e -O 16
+#going to calculate shannon diversity, observed species, the number of singeltons (i.e. OTUs present only once), coverage (people sometimes ask for this in papers), and eveness.
+
+parallel_alpha_diversity.py -i amo_mult_rare/ -o amo_alpha -m observed_otus,shannon,singles,goods_coverage,pielou_e -O 16
+
+```
+Next we collate our alpha diversity results into a file and we'll append it to our mapping files (for ease of use in plotting in R or other packages). 
+
+```
+
+```
 
 ## BLASTn
 
-To get identify our rep set and make sure we have all amoA and nosZ sequneces we'll use BLAST+. You have to downlaod and install the software from NCBI. The first thing you have to do is get the nt database. We can do that with a simple script.
+To get identify our rep set and make sure we have all amoA and nosZ sequneces we'll use BLAST+ as, unlike 16S sequences, the databases aren't the best (FunGene is alright). You have to downlaod and install the software from NCBI. The first thing you have to do is get the nt database. We can do that with a simple script.
 
 ```
 #ignore these, these are MSU HPCC specific. 
@@ -197,7 +251,6 @@ update_blastdb.pl nt
 
 tar -xf *.gz
 #extracts all the files to the current directory (nt)
-
 ```
 
 We also need to get a list of NCBI identifiers to ignore as, for this round, we only want known cultured denitrifiers. We can use this link:
@@ -206,7 +259,7 @@ https://www.ncbi.nlm.nih.gov/nuccore/?term=%22environmental+samples%22%5Borganis
 
 Then: Send to > File > Format > GI list
 
-Now we can BLAST our rep set.
+Now we can BLAST our rep set. This will return a tab delimited file that has the OTU the closested cultured rep and the percent identity to that cultured organism. 
 
 ```
 blastn -query nos_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out nos_results_out -negative_gilist sequence.gi -db nt
@@ -214,4 +267,8 @@ blastn -query nos_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle p
 blastn -query amo_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out -negative_gilist sequence.gi -db nt
 ```
 
-This gives us back a single BLAST hit for each OTU and the percent identity for that it. 
+We'll blast this one more time and get the closest clone or envrionmental sequence (we don't technically need it but it's helpful for inferring drivers). This will require another (bigger) list of NBCI ascession numbers:
+
+https://www.ncbi.nlm.nih.gov/nuccore/?term=plasmid%5Borgn%5D+OR+%22genome%22+OR+%22complete%22+OR+%22strain%22+OR+%22ATCC%22
+
+
