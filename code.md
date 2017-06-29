@@ -222,23 +222,25 @@ count_seqs.py -i closed_pick/rep_set.fna -o closed_pick/count.txt
 
 We see we've lost a some sequences and we can see that our standard deviation on our sequence count (count.txt) is large (over 100bp). In the rep set that we have several sequences that are tiny <~50bp in length). However when we hand BLAST a few long sequences they all come back as amoA or amoA-containing organisms. When we blast the short sequences they come back as the odd ball sequences (i.e. Steptomyces genome). 
 
-From here we'll take our OTU file and filter our fasta file like we did for chimera filtering except we'll be using the failures files from our closed reference OTU pick. Further, we'll purge all sequences <200bp in length with a shell script using the 'awk' command. We could have scrapped our amoA data and gone back to demultiplexing and thrown out sequences <200bp in length as well (though, its supposed to do that by default). 
+From here we'll take our OTU file and filter our fasta file like we did for chimera filtering except we'll be using the failures files from our closed reference OTU pick. Further, we'll purge all sequences <200bp and >370bp in length with a shell script using the 'awk' command. We could have scrapped our amoA data and gone back to demultiplexing and thrown out sequences <200bp in length as well (though, its supposed to do that by default and didn't...). 
 
 ```
 filter_fasta.py -n -o chimera_free_split2_filtered.fna -f chimera_free_split2.fna -s closed_pick/uclust_ref_picked_otus/chimera_free_split2_failures.txt
 
-awk '!/^>/ { next } { getline seq } length(seq) >= 200 { print $0 "\n" seq }' chimera_free_split2_filtered.fna > chimera_free_split2_filtered2.fna
+awk '!/^>/ { next } { getline seq } length(seq) >= 300 { print $0 "\n" seq }' chimera_free_split2_filtered.fna > chimera_free_split2_filtered2.fna
+
+awk '!/^>/ { next } { getline seq } length(seq) <= 370 { print $0 "\n" seq }' chimera_free_split2_filtered2.fna > chimera_free_split2_filtered3.fna
 #removes any sequence <200bp in length. Can be modified by changing the number or the widget '>' to exclude sequences of any length.
 
-#chimera_free_split2_filtered2.fna is the file we'll throw into OTU picking
+#chimera_free_split2_filtered3.fna is the file we'll throw into OTU picking
 ```
 
 Now we can repeat the processing we did above (de novo OTU picking, rep set generation, BLASTn, and making an OTU table)
 
 ```
-pick_otus.py -i chimera_free_split2_filtered2.fna -m swarm -o swarm_otus2 -s 0.85
-pick_rep_set.py -f chimera_free_split2_filtered2.fna -o amo_rep_set2.fna -i swarm_otus2/chimera_free_split2_filtered2_otus.txt
-make_otu_table.py -o amo_otu_table2.biom -i swarm_otus2/chimera_free_split2_filtered2_otus.txt
+pick_otus.py -i chimera_free_split2_filtered3.fna -m swarm -o swarm_otus2 -s 0.85
+pick_rep_set.py -f chimera_free_split2_filtered3.fna -o amo_rep_set2.fna -i swarm_otus2/chimera_free_split2_filtered3_otus.txt
+make_otu_table.py -o amo_otu_table2.biom -i swarm_otus2/chimera_free_split2_filtered3_otus.txt
 biom convert -b -i amo_otu_table2.biom -o amo_otu_table2.txt --table-type='OTU table'
 biom summarize-table -i amo_otu_table2.biom -o amo_otu_table2_sum.txt
 
