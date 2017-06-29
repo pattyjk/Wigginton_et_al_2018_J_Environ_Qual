@@ -331,10 +331,7 @@ Next we collate our alpha diversity results into a file and we'll append it to o
 ```
 collate_alpha.py -i nos_alpha -o nos_alpha_collated
 collate_alpha.py -i amo_alpha -o amo_alpha_collated
-```
-Finally, we can add our alpha diversity to our mapping file for use in a stats package.
 
-```
 add_alpha_to_mapping_file.py -i nos_alpha_collated -m nos_map.txt --depth=2010 --collated_input
 add_alpha_to_mapping_file.py -i amo_alpha_collated -m amo_map.txt --depth=2010 --collated_input
 ```
