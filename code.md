@@ -329,10 +329,15 @@ parallel_alpha_diversity.py -i amo_mult_rare/ -o amo_alpha -m observed_otus,shan
 Next we collate our alpha diversity results into a file and we'll append it to our mapping files (for ease of use in plotting in R or other packages). 
 
 ```
+collate_alpha.py -i nos_alpha -o nos_alpha_collated
+collate_alpha.py -i amo_alpha -o amo_alpha_collated
+```
+Finally, we can add our alpha diversity to our mapping file for use in a stats package.
 
 ```
-
-
+add_alpha_to_mapping_file.py -i nos_alpha_collated -m nos_map.txt --depth=2010 --collated_input
+add_alpha_to_mapping_file.py -i amo_alpha_collated -m amo_map.txt --depth=2010 --collated_input
+```
 
 ## Significance testing
 
