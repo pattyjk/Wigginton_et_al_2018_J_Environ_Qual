@@ -209,22 +209,38 @@ Next we want to doa  closed reference OTU pick with our AOB seed sequences as a 
 pick_closed_reference_otus.py -i chimera_free_split2.fna -o closed_pick -r fungene_9.1_amoA_AOB_38_aligned_nucleotide_seqs.fa -p closed_param.txt 
 ```
 
-This produces a single folder (closed_pick) and it will make a list of OTUs that hit the database within 80% similarity and those that failed to hit the database within 80% similarity. We can create an OTU table, summarize it, and create a rep set to see what we have for depth and to BLAST a sequence or two at NCBI (https://blast.ncbi.nlm.nih.gov/Blast.cgi).
-
+This produces a single folder (closed_pick) and it will make a list of OTUs that hit the database within 75% similarity and those that failed to hit the database within 80% similarity. We can create an OTU table, summarize it, and create a rep set to see what we have for depth and to BLAST a sequence or two at NCBI (https://blast.ncbi.nlm.nih.gov/Blast.cgi).
 
 ```
 make_otu_table.py -i closed_pick/chimera_free_split2_otus.txt -o closed_pick/otu_table.biom
 biom summarize-table -i closed_pick/otu_table.biom -o closed_pick/otu_sum.txt
 pick_rep_set.py -i closed_pick/chimera_free_split2_otus.txt -o closed_pick/rep_set.fna -f chimera_free_split2.fna
+count_seqs.py -i closed_pick/rep_set.fna -o closed_pick/count.txt
 ```
 
-We see we've lost a substainal amount of sequences, however when we hand BLAST a few sequences they all come back as amoA or amoA-containing organisms. From here we'll take our OTU file and filter our fasta file like we did for chimera filtering except we'll be using the failures files from our closed reference OTU pick.
+We see we've lost a substainal amount of sequences and we can see that our standard deviation on our sequence count (count.txt) is large (over 100bp). In the rep set that we have several sequences that are tiny <~50bp in length). However when we hand BLAST a few long sequences they all come back as amoA or amoA-containing organisms. When we blast the short sequences they come back as the odd ball sequences (i.e. Steptomyces genome). 
+
+From here we'll take our OTU file and filter our fasta file like we did for chimera filtering except we'll be using the failures files from our closed reference OTU pick. Further, we'll purge all sequences <200bp in length with a shell script using the 'awk' command.
 
 ````
 filter_fasta.py -o chimera_free_split2_filtered.fna -f chimera_free_split2.fna -n -i 
+
+awk '!/^>/ { next } { getline seq } length(seq) >= 200 { print $0 "\n" seq }' chimera_free_split2_filtered.fna > chimera_free_split2_filtered2.fna
+
+#chimera_free_split2_filtered2.fna is the file we'll throw into OTU picking
 ```
 
 Now we can repeat the processing we did above (de novo OTU picking, rep set generation, BLASTn, and making an OTU table)
+
+```
+pick_otus.py -i chimera_free_split2_filtered2.fna -m swarm -o swarm_otus2 -s 0.85
+pick_rep_set.py -f chimera_free_split2_filtered2.fna -o amo_rep_set2.fna -i 
+make_otu_table.py -o amo_otu_table2.biom -i 
+
+blastn -query amo_rep_set2.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out -negative_gilist sequence.gi -db nt
+
+blastn -query amo_rep_set2.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out_envir -negative_gilist cultured_gi.gi -db nt
+```
 
 ## Mapping file
 For our diversity to meaningful we need to put together a mapping file for each gene that has all the information (metadata) for each sample. QIIME requires a pretty specific format for their mapping files: http://qiime.org/documentation/file_formats.html#mapping-file-overview
@@ -270,7 +286,7 @@ cd ..
 cd SK97_split_amo
 #change into our amoA directory.
 
-single_rarefaction.py -i amo_otu_table.biom -o amo_rare.biom -d 7627
+single_rarefaction.py -i amo_otu_table2.biom -o amo_rare.biom -d 7627
 #-d should be the lowest sequencing depth from the 'biom summarize-table command'. I threw out the poorly sequenced sample here (depth=200) as its not sufficient for describing diversity here. 
 
 beta_diversity.py -m bray_curtis -i amo_rare.biom -o amo_beta
@@ -317,7 +333,4 @@ Next we collate our alpha diversity results into a file and we'll append it to o
 
 ## Significance testing
 
-```
-#just keeping this here just in case.
-awk '!/^>/ { next } { getline seq } length(seq) >= 200 { print $0 "\n" seq }' amo_rep_set.fna > rep_filt.fna
-```
+
