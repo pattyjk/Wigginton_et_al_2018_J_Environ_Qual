@@ -281,3 +281,7 @@ blastn -query amo_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle p
 
 ## Significance testing
 
+```
+#just keeping this here just in case.
+awk '!/^>/ { next } { getline seq } length(seq) >= 200 { print $0 "\n" seq }' amo_rep_set.fna > rep_filt.fna
+```
