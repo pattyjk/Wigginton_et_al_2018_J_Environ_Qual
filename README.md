@@ -97,7 +97,7 @@ filter_fasta.py -n -o chimera_free_split.fna -f seqs.fna -s chimeric/chimeras.tx
 cd ..
 ```
 
-This can be sped up (parallelized) by developing a refernce database from NCBI or FunGene.
+This can be sped up (parallelized) by developing a refernce database from NCBI or FunGene.The final consideration we should take into account if framshift mutations. We can take care of these with Framebot from the RDPstaff (http://fungene.cme.msu.edu/FunGenePipeline/framebot/form.spr) and can use their online utility (the command line program is a pain to get working). You then take the resulting file (in the framebot folder) and use that in downstream analyses. 
 
 ## Picking operational taxonomic units (OTUs), picking a rep set, & making an OTU table
 
