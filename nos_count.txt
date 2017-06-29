@@ -1,0 +1,3 @@
+
+1845215  : split/seqs.fna (Sequence lengths (mean +/- std): 415.1545 +/- 100.9235)
+1845215  : Total
