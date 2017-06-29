@@ -203,7 +203,7 @@ First, we're going to download the AOB seed sequences from FunGene: http://funge
 
 Select Seed Sequences > Begin Analysis > Nucleotide Download > Download
 
-Next we want to doa  closed reference OTU pick with our AOB seed sequences as a reference database.
+Next we want to do a closed reference OTU pick with our AOB seed sequences as a reference database.
 
 ```
 pick_closed_reference_otus.py -i chimera_free_split2.fna -o closed_pick -r fungene_9.1_amoA_AOB_38_aligned_nucleotide_seqs.fa -p closed_param.txt 
@@ -218,7 +218,7 @@ pick_rep_set.py -i closed_pick/chimera_free_split2_otus.txt -o closed_pick/rep_s
 count_seqs.py -i closed_pick/rep_set.fna -o closed_pick/count.txt
 ```
 
-We see we've lost a substainal amount of sequences and we can see that our standard deviation on our sequence count (count.txt) is large (over 100bp). In the rep set that we have several sequences that are tiny <~50bp in length). However when we hand BLAST a few long sequences they all come back as amoA or amoA-containing organisms. When we blast the short sequences they come back as the odd ball sequences (i.e. Steptomyces genome). 
+We see we've lost a some sequences and we can see that our standard deviation on our sequence count (count.txt) is large (over 100bp). In the rep set that we have several sequences that are tiny <~50bp in length). However when we hand BLAST a few long sequences they all come back as amoA or amoA-containing organisms. When we blast the short sequences they come back as the odd ball sequences (i.e. Steptomyces genome). 
 
 From here we'll take our OTU file and filter our fasta file like we did for chimera filtering except we'll be using the failures files from our closed reference OTU pick. Further, we'll purge all sequences <200bp in length with a shell script using the 'awk' command. We could have scrapped our amoA data and gone back to demultiplexing and thrown out sequences <200bp in length as well (though, its supposed to do that by default). 
 
@@ -288,7 +288,7 @@ cd ..
 cd SK97_split_amo
 #change into our amoA directory.
 
-single_rarefaction.py -i amo_otu_table2.biom -o amo_rare.biom -d 7627
+single_rarefaction.py -i amo_otu_table2.biom -o amo_rare.biom -d 1431q
 #-d should be the lowest sequencing depth from the 'biom summarize-table command'. I threw out the poorly sequenced sample here (depth=200) as its not sufficient for describing diversity here. 
 
 beta_diversity.py -m bray_curtis -i amo_rare.biom -o amo_beta
