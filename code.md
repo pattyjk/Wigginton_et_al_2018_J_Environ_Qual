@@ -329,7 +329,7 @@ parallel_alpha_diversity.py -i nos_mult_rare/ -o nos_alpha -m observed_species,s
 
 #going to calculate shannon diversity, observed species, the number of singeltons (i.e. OTUs present only once), coverage (people sometimes ask for this in papers), and eveness.
 
-parallel_alpha_diversity.py -i amo_mult_rare/ -o amo_alpha -m observed_otus,shannon,singles,goods_coverage,pielou_e -O 16
+parallel_alpha_diversity.py -i amo_mult_rare/ -o amo_alpha -m observed_species,shannon,singles,goods_coverage,simpson_e -O 16
 ```
 
 Next we collate our alpha diversity results into a file and we'll append it to our mapping files (for ease of use in plotting in R or other packages). 
@@ -342,7 +342,11 @@ collate_alpha.py -i amo_alpha -o amo_alpha_collated
 
 add_alpha_to_mapping_file.py -i nos_alpha_collated/shannon.txt,nos_alpha_collated/goods_coverage.txt,nos_alpha_collated/singles.txt,nos_alpha_collated/observed_species.txt,nos_alpha_collated/simpson_e.txt -m nos_map.txt --depth=2010 --collated_input -o nos_alphaphied_map.txt
 
-add_alpha_to_mapping_file.py -i amo_alpha_collated/shannon.txt,amo_alpha_collated/goods_coverage.txt,amo_alpha_collated/singles.txt,amo_alpha_collated/observed_species.txt,amo_alpha_collated/simpson_e.txt -m nos_map.txt --depth=2010 --collated_input -o nos_alphaphied_map.txt
+add_alpha_to_mapping_file.py -i amo_alpha_collated/shannon.txt,amo_alpha_collated/goods_coverage.txt,amo_alpha_collated/singles.txt,amo_alpha_collated/observed_species.txt,amo_alpha_collated/simpson_e.txt -m amo_map.txt --depth=1410 --collated_input -o amo_alphaphied_map.txt
+
+#you can make rarefaction plots in QIIME too. They're not htat useful but here's the code
+# make_rarefaction_plots.py -i amo_alpha_collated/ -o alpha_plots -m amo_map.txt
+#make_rarefaction_plots.py -i nos_alpha_collated/ -o alpha_plots -m nos_map.txt
 ```
 
 ## Significance testing
