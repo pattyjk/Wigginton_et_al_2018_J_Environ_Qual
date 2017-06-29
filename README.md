@@ -147,6 +147,85 @@ cd ..
 
 With our rep set and OTU table we can perform downstream analyses (beta and alpha diversity and assigning taxonomy).
 
+
+
+## BLASTn
+
+To get identify our rep set and make sure we have all amoA and nosZ sequneces we'll use BLAST+ as, unlike 16S sequences, the databases aren't the best (FunGene is alright). You have to downlaod and install the software from NCBI. The first thing you have to do is get the nt database. We can do that with a simple script.
+
+```
+#ignore these, these are MSU HPCC specific. 
+#ssh dev-intel14
+#module load RMBlast/2.2.28
+
+mkdir nt
+cd nt
+
+update_blastdb.pl nt
+#downloads a 48 file database.
+
+tar -xf *.gz
+#extracts all the files to the current directory (nt)
+```
+
+We also need to get a list of NCBI identifiers to ignore as, for this round, we only want known cultured denitrifiers. We can use this link:
+
+https://www.ncbi.nlm.nih.gov/nuccore/?term=%22environmental+samples%22%5Borganism%5D+OR+metagenomes%5Borgn%5D+OR+%22Unidentified%22+OR+%22clone%22
+
+Then: Send to > File > Format > GI list
+
+Now we can BLAST our rep set. This will return a tab delimited file that has the OTU the closested cultured rep and the percent identity to that cultured organism. 
+
+```
+blastn -query nos_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out nos_results_out -negative_gilist sequence.gi -db nt
+
+blastn -query amo_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out -negative_gilist sequence.gi -db nt
+```
+
+The most important part of BLAST is ensuring we have the gene of interest and only the gene of interest. For amoA we're looking for Nitrosomonas, Nitrosococcus, Nitrospira, and ppossibly Methylobacterium (pmoA-methane oxidizing gene- is very similar to amoA). For nosZ we're looking for things like Pseudomonas, Bradyrhizobium (any rhizobia), Cheatococcus, and Dechloromonas among many others (nosZ is very widespread). The nosZ sequnences look good, however the amoA sequences give us some pause as many are hitting weird things like Streptococcus. 
+
+We'll blast this one more time and get the closest clone or envrionmental sequence (we don't technically need it but it's helpful for inferring drivers). This will require another (bigger) list of NBCI ascession numbers:
+
+https://www.ncbi.nlm.nih.gov/nuccore/?term=plasmid%5Borgn%5D+OR+%22genome%22+OR+%22complete%22+OR+%22strain%22+OR+%22ATCC%22
+
+```
+blastn -query nos_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out nos_results_out_envir -negative_gilist cultured_gi.gi -db nt
+#cultured_gi.gi is our file from the last link.
+
+#rerun later. 
+#blastn -query amo_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out_envir -negative_gilist cultured_gi.gi -db nt
+```
+## What's wrong with amoA?
+
+Something isn't quite right with the amoA data. There's several ways to go about fixing this but we'll do this the easiest way in QIIME. 
+
+First, we're going to download the AOB seed sequences from FunGene: http://fungene.cme.msu.edu/hmm_detail.spr?hmm_id=325
+
+Select Seed Sequences > Begin Analysis > Nucleotide Download > Download
+
+Next we want to doa  closed reference OTU pick with our AOB seed sequences as a reference database.
+
+```
+pick_closed_reference_otus.py -i chimera_free_split2.fna -o closed_pick -r fungene_9.1_amoA_AOB_38_aligned_nucleotide_seqs.fa -p closed_param.txt 
+```
+
+This produces a single folder (closed_pick) and it will make a list of OTUs that hit the database within 80% similarity and those that failed to hit the database within 80% similarity. We can create an OTU table, summarize it, and create a rep set to see what we have for depth and to BLAST a sequence or two at NCBI (https://blast.ncbi.nlm.nih.gov/Blast.cgi).
+
+
+```
+make_otu_table.py -i closed_pick/chimera_free_split2_otus.txt -o closed_pick/otu_table.biom
+biom summarize-table -i closed_pick/otu_table.biom -o closed_pick/otu_sum.txt
+pick_rep_set.py -i closed_pick/chimera_free_split2_otus.txt -o closed_pick/rep_set.fna -f chimera_free_split2.fna
+```
+
+We see we've lost a substainal amount of sequences, however when we hand BLAST a few sequences they all come back as amoA or amoA-containing organisms. From here we'll take our OTU file and filter our fasta file like we did for chimera filtering except we'll be using the failures files from our closed reference OTU pick.
+
+````
+filter_fasta.py -o chimera_free_split2_filtered.fna -f chimera_free_split2.fna -n -i 
+```
+
+Now we can repeat the processing we did above (de novo OTU picking, rep set generation, BLASTn, and making an OTU table)
+
 ## Mapping file
 For our diversity to meaningful we need to put together a mapping file for each gene that has all the information (metadata) for each sample. QIIME requires a pretty specific format for their mapping files: http://qiime.org/documentation/file_formats.html#mapping-file-overview
 
@@ -234,49 +313,6 @@ Next we collate our alpha diversity results into a file and we'll append it to o
 
 ```
 
-## BLASTn
-
-To get identify our rep set and make sure we have all amoA and nosZ sequneces we'll use BLAST+ as, unlike 16S sequences, the databases aren't the best (FunGene is alright). You have to downlaod and install the software from NCBI. The first thing you have to do is get the nt database. We can do that with a simple script.
-
-```
-#ignore these, these are MSU HPCC specific. 
-#ssh dev-intel14
-#module load RMBlast/2.2.28
-
-mkdir nt
-cd nt
-
-update_blastdb.pl nt
-#downloads a 48 file database.
-
-tar -xf *.gz
-#extracts all the files to the current directory (nt)
-```
-
-We also need to get a list of NCBI identifiers to ignore as, for this round, we only want known cultured denitrifiers. We can use this link:
-
-https://www.ncbi.nlm.nih.gov/nuccore/?term=%22environmental+samples%22%5Borganism%5D+OR+metagenomes%5Borgn%5D+OR+%22Unidentified%22+OR+%22clone%22
-
-Then: Send to > File > Format > GI list
-
-Now we can BLAST our rep set. This will return a tab delimited file that has the OTU the closested cultured rep and the percent identity to that cultured organism. 
-
-```
-blastn -query nos_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out nos_results_out -negative_gilist sequence.gi -db nt
-
-blastn -query amo_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out -negative_gilist sequence.gi -db nt
-```
-
-We'll blast this one more time and get the closest clone or envrionmental sequence (we don't technically need it but it's helpful for inferring drivers). This will require another (bigger) list of NBCI ascession numbers:
-
-https://www.ncbi.nlm.nih.gov/nuccore/?term=plasmid%5Borgn%5D+OR+%22genome%22+OR+%22complete%22+OR+%22strain%22+OR+%22ATCC%22
-
-```
-blastn -query nos_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out nos_results_out_envir -negative_gilist cultured_gi.gi -db nt
-#cultured_gi.gi is our file from the last link.
-
-blastn -query amo_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out_envir -negative_gilist cultured_gi.gi -db nt
-```
 
 
 ## Significance testing
