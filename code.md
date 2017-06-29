@@ -174,6 +174,8 @@ https://www.ncbi.nlm.nih.gov/nuccore/?term=%22environmental+samples%22%5Borganis
 
 Then: Send to > File > Format > GI list
 
+NOTE: these files often have a some text that will impede your ability to use them in the blastn command. You need to remove it.
+
 Now we can BLAST our rep set. This will return a tab delimited file that has the OTU the closested cultured rep and the percent identity to that cultured organism. 
 
 ```
@@ -243,6 +245,9 @@ biom summarize-table -i amo_otu_table2.biom -o amo_otu_table2_sum.txt
 blastn -query amo_rep_set2.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out2 -negative_gilist sequence.gi -db ntcp amo_
 
 blastn -query amo_rep_set2.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out_envir2 -negative_gilist cultured_gi.gi -db nt
+
+
+blastn -query nos_test -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out envir_test -negative_gilist cultured_gi.gi -db nt
 ```
 
 ## Mapping file
@@ -276,7 +281,7 @@ single_rarefaction.py -i nos_otu_table.biom -o nos_rare.biom -d 2028
 beta_diversity.py -m bray_curtis -i nos_rare.biom -o nos_beta
 #calculate pairwise dissimilarity with bray curtis. To see all options run 'beta_diversity.py -s'.
 
-principal_coordinates.py -i nos_beta -o nos_beta/coords.txt
+principal_coordinates.py -i nos_beta/bray_crutis_nos_rare.txt -o nos_beta/coords.txt
 #creates 2D coordinates for a principal coordinates analysis (PCoA).
 
 make_2d_plots.py -m nos_map.txt -i nos_beta/coords.txt -o nos_beta/2D_plot
@@ -288,14 +293,15 @@ cd ..
 cd SK97_split_amo
 #change into our amoA directory.
 
-single_rarefaction.py -i amo_otu_table2.biom -o amo_rare.biom -d 1431q
+single_rarefaction.py -i amo_otu_table2.biom -o amo_rare.biom -d 1431
 #-d should be the lowest sequencing depth from the 'biom summarize-table command'. I threw out the poorly sequenced sample here (depth=200) as its not sufficient for describing diversity here. 
 
 beta_diversity.py -m bray_curtis -i amo_rare.biom -o amo_beta
 #calculate pairwise dissimilarity with bray curtis. To see all options run 'beta_diversity.py -s'.
 
-principal_coordinates.py -i amo_beta -o amo_beta/coords.txt
+principal_coordinates.py -i amo_beta/bray_curtis_amo_rare.txt -o amo_beta/coords.txt
 #creates 2D coordinates for a principal coordinates analysis (PCoA).
+#I like to take these coordinates and use them in ggplot in R
 
 make_2d_plots.py -m amo_map.txt -o amo_beta/2d_plot -i amo_beta/coords.txt
 #makes a 2D PCoA plot. There's options for a 3D plot using emperor if you so desired. 
@@ -311,10 +317,10 @@ I am going to paralleize this script to take advantage of the HPCC at MSU but th
 ```
 parallel_multiple_rarefactions.py -i nos_otu_table.biom -o nos_mult_rare -m 10 -x 2028 -s 100 -n 1000 -O 16
 
-parallel_multiple_rarefactions.py -i amo_otu_table.biom -o amo_mult_rare -m 10 -x 7627 -s 100 -n 1000 -O 16
+parallel_multiple_rarefactions.py -i amo_otu_table2.biom -o amo_mult_rare -m 10 -x 1430 -s 100 -n 142 -O 16
 ```
 
-This produces a folder for each gene with lots of OTU tables for each iteration of the rarefaction. I did 1k iterations with ~200-700 steps, which might be overkill (both computationally and diversity estimate wise) but I'd rather be sure I've converged on the true mean. However, if you have enough replication you can drop the number of iterations. 
+This produces a folder for each gene with lots of OTU tables for each iteration of the rarefaction. I did 1k iterations with ~10-20 steps, which might be overkill (both computationally and diversity estimate wise) but I'd rather be sure I've converged on the true mean. However, if you have enough replication you can drop the number of iterations. 
 
 Next, we want to calculate the alhpa diversity. Again, I'm going to parallize this but the guts are exactly the same as the resular script (alpha_diversity.py).
 
@@ -329,11 +335,14 @@ parallel_alpha_diversity.py -i amo_mult_rare/ -o amo_alpha -m observed_otus,shan
 Next we collate our alpha diversity results into a file and we'll append it to our mapping files (for ease of use in plotting in R or other packages). 
 
 ```
+#note, if you do run this in parallel you need to remove the two folders in the 'nos_alpha' folder for these scripts to work. 
+
 collate_alpha.py -i nos_alpha -o nos_alpha_collated
 collate_alpha.py -i amo_alpha -o amo_alpha_collated
 
-add_alpha_to_mapping_file.py -i nos_alpha_collated -m nos_map.txt --depth=2010 --collated_input
-add_alpha_to_mapping_file.py -i amo_alpha_collated -m amo_map.txt --depth=2010 --collated_input
+add_alpha_to_mapping_file.py -i nos_alpha_collated/shannon.txt,nos_alpha_collated/goods_coverage.txt,nos_alpha_collated/singles.txt,nos_alpha_collated/observed_species.txt,nos_alpha_collated/simpson_e.txt -m nos_map.txt --depth=2010 --collated_input -o nos_alphaphied_map.txt
+
+add_alpha_to_mapping_file.py -i amo_alpha_collated/shannon.txt,amo_alpha_collated/goods_coverage.txt,amo_alpha_collated/singles.txt,amo_alpha_collated/observed_species.txt,amo_alpha_collated/simpson_e.txt -m nos_map.txt --depth=2010 --collated_input -o nos_alphaphied_map.txt
 ```
 
 ## Significance testing
