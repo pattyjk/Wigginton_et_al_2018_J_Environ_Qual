@@ -209,15 +209,15 @@ We have our first appreciable piece of data! We ca open the folder 2D_plot and c
 
 Next we want to calculate our alpha diversity. We first need to re-rarefy our data (thousands of times, instead of just a single type) becasue alpha diversity is more sensitive to errors associated with rarefaction. So by doing it a bunch of times we can reduce that error. 
 
-I am going to paralleize this script to take advantage of the HPCC at MSU but the guts of the scripts will be the same. The only funky thing here is the '-m' option which is the start point of rarefaction (I always set it to 10). Also, "-O 16" calls 16 cores. 
+I am going to paralleize this script to take advantage of the HPCC at MSU but the guts of the script  will be the same. The only funky thing here is the '-m' option which is the start point of rarefaction (I always set it to 10). Also, "-O 16" calls 16 cores. 
 
 ```
-parallel_multiple_rarefactions.py -i nos_otu_table.biom -o nos_mult_rare -m 10 -x 2028 -s 100 -n 10000 -O 16
+parallel_multiple_rarefactions.py -i nos_otu_table.biom -o nos_mult_rare -m 10 -x 2028 -s 100 -n 1000 -O 16
 
-parallel_multiple_rarefactions.py -i amo_otu_table.biom -o amo_mult_rare -m 10 -x 7627 -s 100 -n 10000 -O 16
+parallel_multiple_rarefactions.py -i amo_otu_table.biom -o amo_mult_rare -m 10 -x 7627 -s 100 -n 1000 -O 16
 ```
 
-This produces a folder for each gene with lots of OTU tables for each iteration of the rarefaction. I did 10k iterations with ~200-700 steps, which might be overkill (both computationally and diversity estimate wise) but I'd rather be sure I've converged on the true mean. However, if you have enough replication you can drop the number of iterations. 
+This produces a folder for each gene with lots of OTU tables for each iteration of the rarefaction. I did 1k iterations with ~200-700 steps, which might be overkill (both computationally and diversity estimate wise) but I'd rather be sure I've converged on the true mean. However, if you have enough replication you can drop the number of iterations. 
 
 Next, we want to calculate the alhpa diversity. Again, I'm going to parallize this but the guts are exactly the same as the resular script (alpha_diversity.py).
 
@@ -270,6 +270,14 @@ blastn -query amo_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle p
 We'll blast this one more time and get the closest clone or envrionmental sequence (we don't technically need it but it's helpful for inferring drivers). This will require another (bigger) list of NBCI ascession numbers:
 
 https://www.ncbi.nlm.nih.gov/nuccore/?term=plasmid%5Borgn%5D+OR+%22genome%22+OR+%22complete%22+OR+%22strain%22+OR+%22ATCC%22
+
+```
+blastn -query nos_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out nos_results_out_envir -negative_gilist cultured_gi.gi -db nt
+#cultured_gi.gi is our file from the last link.
+
+blastn -query amo_rep_set.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out_envir -negative_gilist cultured_gi.gi -db nt
+```
+
 
 ## Significance testing
 
