@@ -252,6 +252,8 @@ blastn -query amo_rep_set2.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle 
 blastn -query nos_test -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out envir_test -negative_gilist cultured_gi.gi -db nt
 ```
 
+What likely happened with amoA is that the person(s) that prepped the library didn't get clean PCR product (very common for amoA).
+
 ## Mapping file
 For our diversity to meaningful we need to put together a mapping file for each gene that has all the information (metadata) for each sample. QIIME requires a pretty specific format for their mapping files: http://qiime.org/documentation/file_formats.html#mapping-file-overview
 
