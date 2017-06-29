@@ -220,12 +220,13 @@ count_seqs.py -i closed_pick/rep_set.fna -o closed_pick/count.txt
 
 We see we've lost a substainal amount of sequences and we can see that our standard deviation on our sequence count (count.txt) is large (over 100bp). In the rep set that we have several sequences that are tiny <~50bp in length). However when we hand BLAST a few long sequences they all come back as amoA or amoA-containing organisms. When we blast the short sequences they come back as the odd ball sequences (i.e. Steptomyces genome). 
 
-From here we'll take our OTU file and filter our fasta file like we did for chimera filtering except we'll be using the failures files from our closed reference OTU pick. Further, we'll purge all sequences <200bp in length with a shell script using the 'awk' command.
+From here we'll take our OTU file and filter our fasta file like we did for chimera filtering except we'll be using the failures files from our closed reference OTU pick. Further, we'll purge all sequences <200bp in length with a shell script using the 'awk' command. We could have scrapped our amoA data and gone back to demultiplexing and thrown out sequences <200bp in length as well (though, its supposed to do that by default). 
 
-````
-filter_fasta.py -o chimera_free_split2_filtered.fna -f chimera_free_split2.fna -n -i 
+```
+filter_fasta.py -n -o chimera_free_split2_filtered.fna -f chimera_free_split2.fna -s closed_pick/uclust_ref_picked_otus/chimera_free_split2_failures.txt
 
 awk '!/^>/ { next } { getline seq } length(seq) >= 200 { print $0 "\n" seq }' chimera_free_split2_filtered.fna > chimera_free_split2_filtered2.fna
+#removes any sequence <200bp in length. Can be modified by changing the number or the widget '>' to exclude sequences of any length.
 
 #chimera_free_split2_filtered2.fna is the file we'll throw into OTU picking
 ```
@@ -254,9 +255,8 @@ All other information has to be squeezed as columns in between "LinkerPrimerSequ
 Both the mapping files I have look like this:
 
 ```
-head -2 amo_map.txt
+head -1 amo_map.txt
 #SampleID       BarcodeSequence LinkerPrimerSequence    Gene    Fragment_length _bp     Field_ID        Type_of _Wastewater Month_Collected  Sampling_Location       Description
-SKW97                   amoA    349     JA06F   OWTS    June    SP1     SKW97
 ```
 
 ## Diversity
