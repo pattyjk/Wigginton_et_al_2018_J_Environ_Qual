@@ -235,12 +235,14 @@ Now we can repeat the processing we did above (de novo OTU picking, rep set gene
 
 ```
 pick_otus.py -i chimera_free_split2_filtered2.fna -m swarm -o swarm_otus2 -s 0.85
-pick_rep_set.py -f chimera_free_split2_filtered2.fna -o amo_rep_set2.fna -i 
-make_otu_table.py -o amo_otu_table2.biom -i 
+pick_rep_set.py -f chimera_free_split2_filtered2.fna -o amo_rep_set2.fna -i swarm_otus2/chimera_free_split2_filtered2_otus.txt
+make_otu_table.py -o amo_otu_table2.biom -i swarm_otus2/chimera_free_split2_filtered2_otus.txt
+biom convert -b -i amo_otu_table2.biom -o amo_otu_table2.txt --table-type='OTU table'
+biom summarize-table -i amo_otu_table2.biom -o amo_otu_table2_sum.txt
 
-blastn -query amo_rep_set2.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out -negative_gilist sequence.gi -db nt
+blastn -query amo_rep_set2.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out2 -negative_gilist sequence.gi -db ntcp amo_
 
-blastn -query amo_rep_set2.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out_envir -negative_gilist cultured_gi.gi -db nt
+blastn -query amo_rep_set2.fna -max_target_seqs 1 -outfmt "6 qseqid sacc stitle pident evalue" -out amo_results_out_envir2 -negative_gilist cultured_gi.gi -db nt
 ```
 
 ## Mapping file
