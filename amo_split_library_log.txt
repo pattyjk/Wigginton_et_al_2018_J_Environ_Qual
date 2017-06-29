@@ -1,0 +1,1564 @@
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW144_S87_L001_R1_001/fastqjoin.join.fastq (md5: 31e3af094144e8d45fce3e3c27bfd9b9)
+Quality filter results
+Total number of input sequences: 18506
+Barcode not in mapping file: 0
+Read too short after quality truncation: 1002
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW144_S87_L001_R1_001fastqjoin.join.fastq	17503
+
+Total number seqs written	17503
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW162_S21_L001_R1_001/fastqjoin.join.fastq (md5: a302e773f3de67c12f916ddc0fafea95)
+Quality filter results
+Total number of input sequences: 101925
+Barcode not in mapping file: 0
+Read too short after quality truncation: 66433
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW162_S21_L001_R1_001fastqjoin.join.fastq	35492
+
+Total number seqs written	35492
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW174_S69_L001_R1_001/fastqjoin.join.fastq (md5: e7e8ab0c98ecb132482745e39b9b2a98)
+Quality filter results
+Total number of input sequences: 69432
+Barcode not in mapping file: 0
+Read too short after quality truncation: 7512
+Count of N characters exceeds limit: 2
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW174_S69_L001_R1_001fastqjoin.join.fastq	61918
+
+Total number seqs written	61918
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW171_S34_L001_R1_001/fastqjoin.join.fastq (md5: 275de34487351778f8d76ceb5b70bc9d)
+Quality filter results
+Total number of input sequences: 47062
+Barcode not in mapping file: 0
+Read too short after quality truncation: 3303
+Count of N characters exceeds limit: 2
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW171_S34_L001_R1_001fastqjoin.join.fastq	43757
+
+Total number seqs written	43757
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW119_S73_L001_R1_001/fastqjoin.join.fastq (md5: d4d32e145c33bef71c7b95c79be724ab)
+Quality filter results
+Total number of input sequences: 87933
+Barcode not in mapping file: 0
+Read too short after quality truncation: 353
+Count of N characters exceeds limit: 2
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 180.00
+SKW119_S73_L001_R1_001fastqjoin.join.fastq	87578
+
+Total number seqs written	87578
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW166_S68_L001_R1_001/fastqjoin.join.fastq (md5: 4f699d1780a353d3597f7c95ff7b470d)
+Quality filter results
+Total number of input sequences: 96415
+Barcode not in mapping file: 0
+Read too short after quality truncation: 29809
+Count of N characters exceeds limit: 2
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 328.00
+SKW166_S68_L001_R1_001fastqjoin.join.fastq	66604
+
+Total number seqs written	66604
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW151_S77_L001_R1_001/fastqjoin.join.fastq (md5: fdd053d2e006f00fe46b731f43a9661b)
+Quality filter results
+Total number of input sequences: 65473
+Barcode not in mapping file: 0
+Read too short after quality truncation: 22301
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW151_S77_L001_R1_001fastqjoin.join.fastq	43172
+
+Total number seqs written	43172
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW102_S60_L001_R1_001/fastqjoin.join.fastq (md5: 2949277fa0ffca46fabf5f0c285c2bfe)
+Quality filter results
+Total number of input sequences: 18170
+Barcode not in mapping file: 0
+Read too short after quality truncation: 2483
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW102_S60_L001_R1_001fastqjoin.join.fastq	15687
+
+Total number seqs written	15687
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW138_S18_L001_R1_001/fastqjoin.join.fastq (md5: 86b2663a1f36ebe9bf24cb8d3dd6e691)
+Quality filter results
+Total number of input sequences: 91140
+Barcode not in mapping file: 0
+Read too short after quality truncation: 127
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 209.00
+SKW138_S18_L001_R1_001fastqjoin.join.fastq	91013
+
+Total number seqs written	91013
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW134_S64_L001_R1_001/fastqjoin.join.fastq (md5: 9cdcb264c3c1d38e6aa6700bc5ac0c17)
+Quality filter results
+Total number of input sequences: 45217
+Barcode not in mapping file: 0
+Read too short after quality truncation: 13703
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW134_S64_L001_R1_001fastqjoin.join.fastq	31514
+
+Total number seqs written	31514
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW97_S1_L001_R1_001/fastqjoin.join.fastq (md5: 56712f1e773cab025971246a28c10d5b)
+Quality filter results
+Total number of input sequences: 28753
+Barcode not in mapping file: 0
+Read too short after quality truncation: 2781
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW97_S1_L001_R1_001fastqjoin.join.fastq	25972
+
+Total number seqs written	25972
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW115_S27_L001_R1_001/fastqjoin.join.fastq (md5: b1f9e334211e5029de31f9b0190db41a)
+Quality filter results
+Total number of input sequences: 37183
+Barcode not in mapping file: 0
+Read too short after quality truncation: 17654
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW115_S27_L001_R1_001fastqjoin.join.fastq	19528
+
+Total number seqs written	19528
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW168_S90_L001_R1_001/fastqjoin.join.fastq (md5: 9aa3dca556904f7173c2b47f6b78b603)
+Quality filter results
+Total number of input sequences: 74160
+Barcode not in mapping file: 0
+Read too short after quality truncation: 10477
+Count of N characters exceeds limit: 2
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW168_S90_L001_R1_001fastqjoin.join.fastq	63681
+
+Total number seqs written	63681
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW98_S13_L001_R1_001/fastqjoin.join.fastq (md5: 4ebbe5bb45c6ac2ce5a49eacdab5f4d5)
+Quality filter results
+Total number of input sequences: 45821
+Barcode not in mapping file: 0
+Read too short after quality truncation: 5909
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW98_S13_L001_R1_001fastqjoin.join.fastq	39912
+
+Total number seqs written	39912
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW99_S25_L001_R1_001/fastqjoin.join.fastq (md5: dc7136c776045072838992c1e32aaecf)
+Quality filter results
+Total number of input sequences: 38200
+Barcode not in mapping file: 0
+Read too short after quality truncation: 1206
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW99_S25_L001_R1_001fastqjoin.join.fastq	36993
+
+Total number seqs written	36993
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW135_S75_L001_R1_001/fastqjoin.join.fastq (md5: 9a230a90b094ad3d22e229c752e4c18e)
+Quality filter results
+Total number of input sequences: 36311
+Barcode not in mapping file: 0
+Read too short after quality truncation: 13793
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW135_S75_L001_R1_001fastqjoin.join.fastq	22518
+
+Total number seqs written	22518
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW132_S41_L001_R1_001/fastqjoin.join.fastq (md5: 78e5eb942d7614891aef845288e24792)
+Quality filter results
+Total number of input sequences: 37261
+Barcode not in mapping file: 0
+Read too short after quality truncation: 3303
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW132_S41_L001_R1_001fastqjoin.join.fastq	33957
+
+Total number seqs written	33957
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW136_S86_L001_R1_001/fastqjoin.join.fastq (md5: d0809bd0b3bb43aa3bf785869a81e434)
+Quality filter results
+Total number of input sequences: 37353
+Barcode not in mapping file: 0
+Read too short after quality truncation: 14157
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW136_S86_L001_R1_001fastqjoin.join.fastq	23196
+
+Total number seqs written	23196
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW121_S4_L001_R1_001/fastqjoin.join.fastq (md5: 08879af25bebf1a76221ba75eca41f8d)
+Quality filter results
+Total number of input sequences: 37274
+Barcode not in mapping file: 0
+Read too short after quality truncation: 18812
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW121_S4_L001_R1_001fastqjoin.join.fastq	18462
+
+Total number seqs written	18462
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW104_S82_L001_R1_001/fastqjoin.join.fastq (md5: 41655b1e071256f1c1aa345b77f18bc0)
+Quality filter results
+Total number of input sequences: 39410
+Barcode not in mapping file: 0
+Read too short after quality truncation: 2094
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW104_S82_L001_R1_001fastqjoin.join.fastq	37316
+
+Total number seqs written	37316
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW161_S9_L001_R1_001/fastqjoin.join.fastq (md5: 749a55e8bc0ec9cdbc60fe1f12ef9d2c)
+Quality filter results
+Total number of input sequences: 60340
+Barcode not in mapping file: 0
+Read too short after quality truncation: 19524
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW161_S9_L001_R1_001fastqjoin.join.fastq	40816
+
+Total number seqs written	40816
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW116_S39_L001_R1_001/fastqjoin.join.fastq (md5: a98a9691a9f6968d583e01427b1a1168)
+Quality filter results
+Total number of input sequences: 25178
+Barcode not in mapping file: 0
+Read too short after quality truncation: 2682
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW116_S39_L001_R1_001fastqjoin.join.fastq	22496
+
+Total number seqs written	22496
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW123_S28_L001_R1_001/fastqjoin.join.fastq (md5: ef61fe15d08b68a323f530620a6301c8)
+Quality filter results
+Total number of input sequences: 75819
+Barcode not in mapping file: 0
+Read too short after quality truncation: 34680
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW123_S28_L001_R1_001fastqjoin.join.fastq	41139
+
+Total number seqs written	41139
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW145_S7_L001_R1_001/fastqjoin.join.fastq (md5: 0332409ddf213e4bf7a87e9ffc1c8761)
+Quality filter results
+Total number of input sequences: 17088
+Barcode not in mapping file: 0
+Read too short after quality truncation: 2
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW145_S7_L001_R1_001fastqjoin.join.fastq	17086
+
+Total number seqs written	17086
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW140_S42_L001_R1_001/fastqjoin.join.fastq (md5: f80e3344c3797e263a0aa7ad0f33c47e)
+Quality filter results
+Total number of input sequences: 35051
+Barcode not in mapping file: 0
+Read too short after quality truncation: 27
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 183.00
+SKW140_S42_L001_R1_001fastqjoin.join.fastq	35024
+
+Total number seqs written	35024
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW106_S14_L001_R1_001/fastqjoin.join.fastq (md5: c92dbd03c37209e0e475c741fcbdf13a)
+Quality filter results
+Total number of input sequences: 58635
+Barcode not in mapping file: 0
+Read too short after quality truncation: 3350
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW106_S14_L001_R1_001fastqjoin.join.fastq	55284
+
+Total number seqs written	55284
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW178_S23_L001_R1_001/fastqjoin.join.fastq (md5: e03d7cfa6cc97d5405fa50af5cebcb70)
+Quality filter results
+Total number of input sequences: 83665
+Barcode not in mapping file: 0
+Read too short after quality truncation: 17338
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW178_S23_L001_R1_001fastqjoin.join.fastq	66327
+
+Total number seqs written	66327
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW146_S19_L001_R1_001/fastqjoin.join.fastq (md5: b522f219e89396cf82f1fb3d8aa802f0)
+Quality filter results
+Total number of input sequences: 91026
+Barcode not in mapping file: 0
+Read too short after quality truncation: 184
+Count of N characters exceeds limit: 2
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 57.00
+SKW146_S19_L001_R1_001fastqjoin.join.fastq	90840
+
+Total number seqs written	90840
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW163_S33_L001_R1_001/fastqjoin.join.fastq (md5: 7073fc98c23acd6e8a016642e903ca96)
+Quality filter results
+Total number of input sequences: 39104
+Barcode not in mapping file: 0
+Read too short after quality truncation: 1371
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 258.00
+SKW163_S33_L001_R1_001fastqjoin.join.fastq	37733
+
+Total number seqs written	37733
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW158_S67_L001_R1_001/fastqjoin.join.fastq (md5: 6eb4d8e12059bd36e2d3f8729139eaa2)
+Quality filter results
+Total number of input sequences: 89700
+Barcode not in mapping file: 0
+Read too short after quality truncation: 72659
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW158_S67_L001_R1_001fastqjoin.join.fastq	17041
+
+Total number seqs written	17041
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW107_S26_L001_R1_001/fastqjoin.join.fastq (md5: 3c2d5602ada20d0411838e744d2ebd1f)
+Quality filter results
+Total number of input sequences: 26029
+Barcode not in mapping file: 0
+Read too short after quality truncation: 368
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW107_S26_L001_R1_001fastqjoin.join.fastq	25661
+
+Total number seqs written	25661
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW127_S74_L001_R1_001/fastqjoin.join.fastq (md5: fad334075f6f52755887f392816fea29)
+Quality filter results
+Total number of input sequences: 1670
+Barcode not in mapping file: 0
+Read too short after quality truncation: 232
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW127_S74_L001_R1_001fastqjoin.join.fastq	1438
+
+Total number seqs written	1438
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW141_S54_L001_R1_001/fastqjoin.join.fastq (md5: 349d6c10f1b1fc54a038fc3e1a12d214)
+Quality filter results
+Total number of input sequences: 42745
+Barcode not in mapping file: 0
+Read too short after quality truncation: 12288
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW141_S54_L001_R1_001fastqjoin.join.fastq	30456
+
+Total number seqs written	30456
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW113_S3_L001_R1_001/fastqjoin.join.fastq (md5: ede4df9a8140fb41ed393fdb9eb51308)
+Quality filter results
+Total number of input sequences: 71510
+Barcode not in mapping file: 0
+Read too short after quality truncation: 10555
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 145.00
+SKW113_S3_L001_R1_001fastqjoin.join.fastq	60954
+
+Total number seqs written	60954
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW169_S10_L001_R1_001/fastqjoin.join.fastq (md5: a8a51cb77381767baeb98c1c7d480df3)
+Quality filter results
+Total number of input sequences: 75244
+Barcode not in mapping file: 0
+Read too short after quality truncation: 11992
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW169_S10_L001_R1_001fastqjoin.join.fastq	63252
+
+Total number seqs written	63252
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW167_S79_L001_R1_001/fastqjoin.join.fastq (md5: b5d0b1623b7c5852818d7bd119c73348)
+Quality filter results
+Total number of input sequences: 75289
+Barcode not in mapping file: 0
+Read too short after quality truncation: 252
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW167_S79_L001_R1_001fastqjoin.join.fastq	75037
+
+Total number seqs written	75037
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW103_S71_L001_R1_001/fastqjoin.join.fastq (md5: 3207b945dac59ee7e17850cf64b93df0)
+Quality filter results
+Total number of input sequences: 79510
+Barcode not in mapping file: 0
+Read too short after quality truncation: 64204
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW103_S71_L001_R1_001fastqjoin.join.fastq	15306
+
+Total number seqs written	15306
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW172_S46_L001_R1_001/fastqjoin.join.fastq (md5: 5e424284944e8c5392fc8095ee577d69)
+Quality filter results
+Total number of input sequences: 58148
+Barcode not in mapping file: 0
+Read too short after quality truncation: 24165
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW172_S46_L001_R1_001fastqjoin.join.fastq	33983
+
+Total number seqs written	33983
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW131_S29_L001_R1_001/fastqjoin.join.fastq (md5: b024ba3f075da74037cca411c99e6452)
+Quality filter results
+Total number of input sequences: 30913
+Barcode not in mapping file: 0
+Read too short after quality truncation: 16
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW131_S29_L001_R1_001fastqjoin.join.fastq	30897
+
+Total number seqs written	30897
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW147_S31_L001_R1_001/fastqjoin.join.fastq (md5: 153aa63e261069206f1dbc688d03058e)
+Quality filter results
+Total number of input sequences: 55532
+Barcode not in mapping file: 0
+Read too short after quality truncation: 2603
+Count of N characters exceeds limit: 2
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW147_S31_L001_R1_001fastqjoin.join.fastq	52927
+
+Total number seqs written	52927
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW176_S91_L001_R1_001/fastqjoin.join.fastq (md5: fc1822b33b2072a9f3af46ec42f570f8)
+Quality filter results
+Total number of input sequences: 61929
+Barcode not in mapping file: 0
+Read too short after quality truncation: 4719
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW176_S91_L001_R1_001fastqjoin.join.fastq	57209
+
+Total number seqs written	57209
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW108_S38_L001_R1_001/fastqjoin.join.fastq (md5: 7dc07af1f2b443f67c3bfce4ef55f4bc)
+Quality filter results
+Total number of input sequences: 13056
+Barcode not in mapping file: 0
+Read too short after quality truncation: 5420
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW108_S38_L001_R1_001fastqjoin.join.fastq	7636
+
+Total number seqs written	7636
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW137_S6_L001_R1_001/fastqjoin.join.fastq (md5: df638c0de07e631d0b75d6bf1f8e97dd)
+Quality filter results
+Total number of input sequences: 79237
+Barcode not in mapping file: 0
+Read too short after quality truncation: 132
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 139.00
+SKW137_S6_L001_R1_001fastqjoin.join.fastq	79104
+
+Total number seqs written	79104
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW155_S32_L001_R1_001/fastqjoin.join.fastq (md5: cdc9ecab73fde52c1ec6e2331dcafddd)
+Quality filter results
+Total number of input sequences: 64173
+Barcode not in mapping file: 0
+Read too short after quality truncation: 10
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW155_S32_L001_R1_001fastqjoin.join.fastq	64163
+
+Total number seqs written	64163
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW175_S80_L001_R1_001/fastqjoin.join.fastq (md5: 4cab9e88402acfc5110f7a73825f1378)
+Quality filter results
+Total number of input sequences: 82053
+Barcode not in mapping file: 0
+Read too short after quality truncation: 18207
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 328.00
+SKW175_S80_L001_R1_001fastqjoin.join.fastq	63845
+
+Total number seqs written	63845
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW182_S70_L001_R1_001/fastqjoin.join.fastq (md5: 14413a4e2a4a4b8a6a4b87ffc855c4dc)
+Quality filter results
+Total number of input sequences: 65868
+Barcode not in mapping file: 0
+Read too short after quality truncation: 5579
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW182_S70_L001_R1_001fastqjoin.join.fastq	60288
+
+Total number seqs written	60288
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW111_S72_L001_R1_001/fastqjoin.join.fastq (md5: 66b63cd41cded69ba09b737a49bbd032)
+Quality filter results
+Total number of input sequences: 64026
+Barcode not in mapping file: 0
+Read too short after quality truncation: 40579
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW111_S72_L001_R1_001fastqjoin.join.fastq	23447
+
+Total number seqs written	23447
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW126_S63_L001_R1_001/fastqjoin.join.fastq (md5: 5832dc9c5afa171e25db81f58b7e31c9)
+Quality filter results
+Total number of input sequences: 67007
+Barcode not in mapping file: 0
+Read too short after quality truncation: 81
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 203.00
+SKW126_S63_L001_R1_001fastqjoin.join.fastq	66926
+
+Total number seqs written	66926
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW129_S5_L001_R1_001/fastqjoin.join.fastq (md5: b9b5473d03aa9d67006e1e95a71ee2a4)
+Quality filter results
+Total number of input sequences: 42047
+Barcode not in mapping file: 0
+Read too short after quality truncation: 6069
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW129_S5_L001_R1_001fastqjoin.join.fastq	35978
+
+Total number seqs written	35978
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW186_S24_L001_R1_001/fastqjoin.join.fastq (md5: 933516e22357c810b1cd425da762afa2)
+Quality filter results
+Total number of input sequences: 70579
+Barcode not in mapping file: 0
+Read too short after quality truncation: 11193
+Count of N characters exceeds limit: 3
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW186_S24_L001_R1_001fastqjoin.join.fastq	59383
+
+Total number seqs written	59383
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW139_S30_L001_R1_001/fastqjoin.join.fastq (md5: f568d3bfc76e6f8c9cd9f0a4c3a93a9c)
+Quality filter results
+Total number of input sequences: 76802
+Barcode not in mapping file: 0
+Read too short after quality truncation: 17187
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW139_S30_L001_R1_001fastqjoin.join.fastq	59615
+
+Total number seqs written	59615
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW142_S65_L001_R1_001/fastqjoin.join.fastq (md5: 5bf79cbcf42fe814a01048f15339b570)
+Quality filter results
+Total number of input sequences: 35412
+Barcode not in mapping file: 0
+Read too short after quality truncation: 24364
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW142_S65_L001_R1_001fastqjoin.join.fastq	11048
+
+Total number seqs written	11048
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW177_S11_L001_R1_001/fastqjoin.join.fastq (md5: 158365beee860adffc5e71e9d6b439c4)
+Quality filter results
+Total number of input sequences: 89447
+Barcode not in mapping file: 0
+Read too short after quality truncation: 76
+Count of N characters exceeds limit: 3
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW177_S11_L001_R1_001fastqjoin.join.fastq	89368
+
+Total number seqs written	89368
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW157_S56_L001_R1_001/fastqjoin.join.fastq (md5: 8a02d62c414a6dc1906fdb98b9f26158)
+Quality filter results
+Total number of input sequences: 48285
+Barcode not in mapping file: 0
+Read too short after quality truncation: 13
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 198.00
+SKW157_S56_L001_R1_001fastqjoin.join.fastq	48271
+
+Total number seqs written	48271
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW183_S81_L001_R1_001/fastqjoin.join.fastq (md5: 4e97ce0604e20db8979fccee4c670c8b)
+Quality filter results
+Total number of input sequences: 63460
+Barcode not in mapping file: 0
+Read too short after quality truncation: 6038
+Count of N characters exceeds limit: 2
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW183_S81_L001_R1_001fastqjoin.join.fastq	57420
+
+Total number seqs written	57420
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW156_S44_L001_R1_001/fastqjoin.join.fastq (md5: b50ea02071bdd1eaf849a5e7c783cb75)
+Quality filter results
+Total number of input sequences: 24065
+Barcode not in mapping file: 0
+Read too short after quality truncation: 495
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW156_S44_L001_R1_001fastqjoin.join.fastq	23570
+
+Total number seqs written	23570
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW125_S52_L001_R1_001/fastqjoin.join.fastq (md5: 320e8a00ae1de6dc0d07bfb49c78ab61)
+Quality filter results
+Total number of input sequences: 27930
+Barcode not in mapping file: 0
+Read too short after quality truncation: 7974
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 291.00
+SKW125_S52_L001_R1_001fastqjoin.join.fastq	19956
+
+Total number seqs written	19956
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW148_S43_L001_R1_001/fastqjoin.join.fastq (md5: 6a322a76844852810c5c26ecd81f8580)
+Quality filter results
+Total number of input sequences: 32417
+Barcode not in mapping file: 0
+Read too short after quality truncation: 6
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 309.00
+SKW148_S43_L001_R1_001fastqjoin.join.fastq	32411
+
+Total number seqs written	32411
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW170_S22_L001_R1_001/fastqjoin.join.fastq (md5: b71e106289f99626899c83f23b4ca196)
+Quality filter results
+Total number of input sequences: 75349
+Barcode not in mapping file: 0
+Read too short after quality truncation: 10339
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW170_S22_L001_R1_001fastqjoin.join.fastq	65010
+
+Total number seqs written	65010
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW17_S36_L001_R1_001/fastqjoin.join.fastq (md5: f61528f77659ff51bd363db2e84cf1be)
+Quality filter results
+Total number of input sequences: 5140
+Barcode not in mapping file: 0
+Read too short after quality truncation: 2299
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 454.00
+SKW17_S36_L001_R1_001fastqjoin.join.fastq	2841
+
+Total number seqs written	2841
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW159_S78_L001_R1_001/fastqjoin.join.fastq (md5: ff2bebe17e72c8ebd8ddf0310d22e887)
+Quality filter results
+Total number of input sequences: 87590
+Barcode not in mapping file: 0
+Read too short after quality truncation: 59146
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW159_S78_L001_R1_001fastqjoin.join.fastq	28443
+
+Total number seqs written	28443
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW128_S85_L001_R1_001/fastqjoin.join.fastq (md5: 8c93c439a7a46f03976eec066fb30ba1)
+Quality filter results
+Total number of input sequences: 56380
+Barcode not in mapping file: 0
+Read too short after quality truncation: 6925
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 254.00
+SKW128_S85_L001_R1_001fastqjoin.join.fastq	49455
+
+Total number seqs written	49455
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW154_S20_L001_R1_001/fastqjoin.join.fastq (md5: 10be24bb477706785cc3b134ab6b6f85)
+Quality filter results
+Total number of input sequences: 44760
+Barcode not in mapping file: 0
+Read too short after quality truncation: 10125
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW154_S20_L001_R1_001fastqjoin.join.fastq	34635
+
+Total number seqs written	34635
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW160_S89_L001_R1_001/fastqjoin.join.fastq (md5: ba03c67c6c7be0464df7aff345a496c8)
+Quality filter results
+Total number of input sequences: 80824
+Barcode not in mapping file: 0
+Read too short after quality truncation: 138
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 40.00
+SKW160_S89_L001_R1_001fastqjoin.join.fastq	80686
+
+Total number seqs written	80686
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW133_S53_L001_R1_001/fastqjoin.join.fastq (md5: 259b239dad0ab8f66b4e3258c44ef8c2)
+Quality filter results
+Total number of input sequences: 39096
+Barcode not in mapping file: 0
+Read too short after quality truncation: 649
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW133_S53_L001_R1_001fastqjoin.join.fastq	38446
+
+Total number seqs written	38446
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW184_S92_L001_R1_001/fastqjoin.join.fastq (md5: a5dae6ca44d41c1206c724aaefa64ee5)
+Quality filter results
+Total number of input sequences: 72670
+Barcode not in mapping file: 0
+Read too short after quality truncation: 7938
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW184_S92_L001_R1_001fastqjoin.join.fastq	64732
+
+Total number seqs written	64732
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW149_S55_L001_R1_001/fastqjoin.join.fastq (md5: 85707318cd4c6ac14ec5772a9466d5b5)
+Quality filter results
+Total number of input sequences: 53968
+Barcode not in mapping file: 0
+Read too short after quality truncation: 12114
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW149_S55_L001_R1_001fastqjoin.join.fastq	41853
+
+Total number seqs written	41853
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW109_S50_L001_R1_001/fastqjoin.join.fastq (md5: 6622fc4cc701a73e4d5b736372eac201)
+Quality filter results
+Total number of input sequences: 49581
+Barcode not in mapping file: 0
+Read too short after quality truncation: 1560
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW109_S50_L001_R1_001fastqjoin.join.fastq	48020
+
+Total number seqs written	48020
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW31_S48_L001_R1_001/fastqjoin.join.fastq (md5: ac2c9a91b51d1c6e12eac7be8a67ec0e)
+Quality filter results
+Total number of input sequences: 6690
+Barcode not in mapping file: 0
+Read too short after quality truncation: 2641
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 454.00
+SKW31_S48_L001_R1_001fastqjoin.join.fastq	4049
+
+Total number seqs written	4049
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW181_S59_L001_R1_001/fastqjoin.join.fastq (md5: d044d42844aa2882cd9b880abcfd3073)
+Quality filter results
+Total number of input sequences: 66246
+Barcode not in mapping file: 0
+Read too short after quality truncation: 6102
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW181_S59_L001_R1_001fastqjoin.join.fastq	60143
+
+Total number seqs written	60143
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW114_S15_L001_R1_001/fastqjoin.join.fastq (md5: 689641df110a2187cf2643e8201d8418)
+Quality filter results
+Total number of input sequences: 46108
+Barcode not in mapping file: 0
+Read too short after quality truncation: 1075
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW114_S15_L001_R1_001fastqjoin.join.fastq	45033
+
+Total number seqs written	45033
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW124_S40_L001_R1_001/fastqjoin.join.fastq (md5: 1e3227924651a87804db92ec40ec78d7)
+Quality filter results
+Total number of input sequences: 61466
+Barcode not in mapping file: 0
+Read too short after quality truncation: 27756
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 348.00
+SKW124_S40_L001_R1_001fastqjoin.join.fastq	33710
+
+Total number seqs written	33710
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW110_S61_L001_R1_001/fastqjoin.join.fastq (md5: 7049f41c7778a54639d45d29859739df)
+Quality filter results
+Total number of input sequences: 60797
+Barcode not in mapping file: 0
+Read too short after quality truncation: 8771
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW110_S61_L001_R1_001fastqjoin.join.fastq	52025
+
+Total number seqs written	52025
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW153_S8_L001_R1_001/fastqjoin.join.fastq (md5: 0656040b1ef1dda2fe172535062e0f4e)
+Quality filter results
+Total number of input sequences: 105392
+Barcode not in mapping file: 0
+Read too short after quality truncation: 18237
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW153_S8_L001_R1_001fastqjoin.join.fastq	87155
+
+Total number seqs written	87155
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW101_S49_L001_R1_001/fastqjoin.join.fastq (md5: c89a4fef0d17987c07be221b4c57bd1d)
+Quality filter results
+Total number of input sequences: 65783
+Barcode not in mapping file: 0
+Read too short after quality truncation: 22158
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW101_S49_L001_R1_001fastqjoin.join.fastq	43625
+
+Total number seqs written	43625
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW118_S62_L001_R1_001/fastqjoin.join.fastq (md5: 94486de77c601f9f90f78494f6792342)
+Quality filter results
+Total number of input sequences: 77157
+Barcode not in mapping file: 0
+Read too short after quality truncation: 43
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 146.00
+SKW118_S62_L001_R1_001fastqjoin.join.fastq	77114
+
+Total number seqs written	77114
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW165_S57_L001_R1_001/fastqjoin.join.fastq (md5: 26e205e01ca1376f9d034d9c6a650349)
+Quality filter results
+Total number of input sequences: 73393
+Barcode not in mapping file: 0
+Read too short after quality truncation: 6563
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 162.00
+SKW165_S57_L001_R1_001fastqjoin.join.fastq	66830
+
+Total number seqs written	66830
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW179_S35_L001_R1_001/fastqjoin.join.fastq (md5: dae175e8d873a1cb79aaecf8dba19024)
+Quality filter results
+Total number of input sequences: 69810
+Barcode not in mapping file: 0
+Read too short after quality truncation: 5978
+Count of N characters exceeds limit: 2
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW179_S35_L001_R1_001fastqjoin.join.fastq	63830
+
+Total number seqs written	63830
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW180_S47_L001_R1_001/fastqjoin.join.fastq (md5: 5a9f29d2d126f42b29c93ab3bd7676a7)
+Quality filter results
+Total number of input sequences: 42994
+Barcode not in mapping file: 0
+Read too short after quality truncation: 5841
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW180_S47_L001_R1_001fastqjoin.join.fastq	37152
+
+Total number seqs written	37152
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW143_S76_L001_R1_001/fastqjoin.join.fastq (md5: ab53015986b2736ed7de675a74116d68)
+Quality filter results
+Total number of input sequences: 57780
+Barcode not in mapping file: 0
+Read too short after quality truncation: 28487
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW143_S76_L001_R1_001fastqjoin.join.fastq	29293
+
+Total number seqs written	29293
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW164_S45_L001_R1_001/fastqjoin.join.fastq (md5: 42d3bbe2971fb8c035fa32b72fa815ee)
+Quality filter results
+Total number of input sequences: 72103
+Barcode not in mapping file: 0
+Read too short after quality truncation: 34236
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 136.00
+SKW164_S45_L001_R1_001fastqjoin.join.fastq	37866
+
+Total number seqs written	37866
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW112_S83_L001_R1_001/fastqjoin.join.fastq (md5: 488d5c6b751ad2da3b0d97a0cfa7d209)
+Quality filter results
+Total number of input sequences: 66256
+Barcode not in mapping file: 0
+Read too short after quality truncation: 13357
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW112_S83_L001_R1_001fastqjoin.join.fastq	52898
+
+Total number seqs written	52898
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW130_S17_L001_R1_001/fastqjoin.join.fastq (md5: 780420d3863a09839c0a92c3352e3f81)
+Quality filter results
+Total number of input sequences: 64643
+Barcode not in mapping file: 0
+Read too short after quality truncation: 3670
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW130_S17_L001_R1_001fastqjoin.join.fastq	60972
+
+Total number seqs written	60972
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW105_S2_L001_R1_001/fastqjoin.join.fastq (md5: 004fe4d1f83d120e9e9ae5be41691746)
+Quality filter results
+Total number of input sequences: 75402
+Barcode not in mapping file: 0
+Read too short after quality truncation: 45572
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW105_S2_L001_R1_001fastqjoin.join.fastq	29830
+
+Total number seqs written	29830
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW117_S51_L001_R1_001/fastqjoin.join.fastq (md5: 8a59f8d2f130417b3eca0d1c4eb25749)
+Quality filter results
+Total number of input sequences: 63425
+Barcode not in mapping file: 0
+Read too short after quality truncation: 35528
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW117_S51_L001_R1_001fastqjoin.join.fastq	27896
+
+Total number seqs written	27896
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW122_S16_L001_R1_001/fastqjoin.join.fastq (md5: eef90a9961a0b118ba4f61d550b99474)
+Quality filter results
+Total number of input sequences: 73216
+Barcode not in mapping file: 0
+Read too short after quality truncation: 159
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 143.00
+SKW122_S16_L001_R1_001fastqjoin.join.fastq	73057
+
+Total number seqs written	73057
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW120_S84_L001_R1_001/fastqjoin.join.fastq (md5: 50fe20dad743b24ec162c15b035b3c98)
+Quality filter results
+Total number of input sequences: 54306
+Barcode not in mapping file: 0
+Read too short after quality truncation: 11879
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 304.00
+SKW120_S84_L001_R1_001fastqjoin.join.fastq	42427
+
+Total number seqs written	42427
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW185_S12_L001_R1_001/fastqjoin.join.fastq (md5: e31fe282770ec083996787831e25271c)
+Quality filter results
+Total number of input sequences: 72230
+Barcode not in mapping file: 0
+Read too short after quality truncation: 22327
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW185_S12_L001_R1_001fastqjoin.join.fastq	49903
+
+Total number seqs written	49903
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW173_S58_L001_R1_001/fastqjoin.join.fastq (md5: fc8d771ebcabbc4dbd81946a9c3f48bf)
+Quality filter results
+Total number of input sequences: 64387
+Barcode not in mapping file: 0
+Read too short after quality truncation: 4227
+Count of N characters exceeds limit: 2
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW173_S58_L001_R1_001fastqjoin.join.fastq	60158
+
+Total number seqs written	60158
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW100_S37_L001_R1_001/fastqjoin.join.fastq (md5: 80bd2e40c3ceb968e4b3032a2ff3c520)
+Quality filter results
+Total number of input sequences: 33662
+Barcode not in mapping file: 0
+Read too short after quality truncation: 1641
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW100_S37_L001_R1_001fastqjoin.join.fastq	32021
+
+Total number seqs written	32021
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW150_S66_L001_R1_001/fastqjoin.join.fastq (md5: 39ba7c305afc6a78649b48b40534901c)
+Quality filter results
+Total number of input sequences: 64618
+Barcode not in mapping file: 0
+Read too short after quality truncation: 36070
+Count of N characters exceeds limit: 0
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW150_S66_L001_R1_001fastqjoin.join.fastq	28548
+
+Total number seqs written	28548
+---
+
+Input file paths
+Sequence read filepath: /home/pattyjk/Desktop/N-Cycling_wastewater_wigginton/SK97_joined/SKW152_S88_L001_R1_001/fastqjoin.join.fastq (md5: 6d23155a02a1cc975b990dfe37d84c5c)
+Quality filter results
+Total number of input sequences: 57734
+Barcode not in mapping file: 0
+Read too short after quality truncation: 16869
+Count of N characters exceeds limit: 1
+Illumina quality digit = 0: 0
+Barcode errors exceed max: 0
+
+Result summary (after quality filtering)
+Median sequence length: 349.00
+SKW152_S88_L001_R1_001fastqjoin.join.fastq	40864
+
+Total number seqs written	40864
+---
+
