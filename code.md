@@ -319,12 +319,13 @@ This produces a folder for each gene with lots of OTU tables for each iteration 
 Next, we want to calculate the alhpa diversity. Again, I'm going to parallize this but the guts are exactly the same as the resular script (alpha_diversity.py).
 
 ```
-parallel_alpha_diversity.py -i nos_mult_rare/ -o nos_alpha -m observed_otus,shannon,singles,goods_coverage,pielou_e -O 16
+parallel_alpha_diversity.py -i nos_mult_rare/ -o nos_alpha -m observed_species,shannon,singles,goods_coverage,simpson_e -O 16
+
 #going to calculate shannon diversity, observed species, the number of singeltons (i.e. OTUs present only once), coverage (people sometimes ask for this in papers), and eveness.
 
 parallel_alpha_diversity.py -i amo_mult_rare/ -o amo_alpha -m observed_otus,shannon,singles,goods_coverage,pielou_e -O 16
-
 ```
+
 Next we collate our alpha diversity results into a file and we'll append it to our mapping files (for ease of use in plotting in R or other packages). 
 
 ```
