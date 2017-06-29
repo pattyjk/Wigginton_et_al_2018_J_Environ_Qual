@@ -350,7 +350,3 @@ add_alpha_to_mapping_file.py -i amo_alpha_collated/shannon.txt,amo_alpha_collate
 # make_rarefaction_plots.py -i amo_alpha_collated/ -o alpha_plots -m amo_map.txt
 #make_rarefaction_plots.py -i nos_alpha_collated/ -o alpha_plots -m nos_map.txt
 ```
-
-## Significance testing
-
-
