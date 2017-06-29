@@ -103,7 +103,7 @@ This can be sped up (parallelized) by developing a refernce database from NCBI o
 
 To collapse our amplicons to species level units we'll cluster the reads into OTUs. We will use 85% sequence identity for amoA (Pester et al. 2011, Envrion. Microbiol.) and 90% identity for nosZ (Bowen et al. 2013, Front. Micro.; this reference is for nirS but sample principal applies).
 
-To pick OTUs we'll use the 'pick_otus.py' command paired with the OTU picking method swarm (Mahe et al. 2013, PeerJ). This is the most robust and accurate de novo OTU picking method.
+To pick OTUs we'll use the 'pick_otus.py' command paired with the de novo OTU picking method swarm (Mahe et al. 2013, PeerJ). This is the most robust and accurate de novo OTU picking method. Reference-based OTU picking is common with 16S datasets, however given the large proportion of unknown taxa de novo OTU picking will likely be better for functional genes. 
 
 ```
 cd SK97_split_amo
@@ -114,7 +114,7 @@ cd SKW1_split_nos
 pick_otus.py -m swarm -i chimera_free_split.fna -o swarm_otus -s 0.90
 cd ..
 ```
-#Now that we have our OTUs we want to create a OTU table (species by sample matrix) with the command 'make_otu_table.py' and pick a set of representative sequences with 'pick_rep_set.py'. 
+Now that we have our OTUs we want to create a OTU table (species by sample matrix) with the command 'make_otu_table.py' and pick a set of representative sequences with 'pick_rep_set.py'. 
 
 ```
 cd SK97_split_amo
