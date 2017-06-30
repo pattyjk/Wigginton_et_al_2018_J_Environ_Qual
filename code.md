@@ -22,7 +22,6 @@ cd SKW1-96-36782746-003
 find -type f -name "*.gz" -exec cp {} /Desktop/N-Cycling_wastewater_wigginton/SKW1\;
 ```
 `Hop back a level in our file structure.
-
 ```
 cd ..
 ```
@@ -56,7 +55,7 @@ Next we want to remove any reads that could not be joined (from both forward and
 ```
 find SKW1_joined -type f -name 'fastqjoin.un2.fastq' -delete
 find SKW1_joined -type f -name 'fastqjoin.un1.fastq' -delete
-ofind SK97_joined -type f -name 'fastqjoin.un2.fastq' -delete
+find SK97_joined -type f -name 'fastqjoin.un2.fastq' -delete
 find SK97_joined -type f -name 'fastqjoin.un1.fastq' -delete
 ```
 
